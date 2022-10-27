@@ -1,18 +1,25 @@
 package com.bridgelabz.MoodAnalyzer;
 
 public class MoodAnalyzerMain {
-    String  message;
-
+    private String message;
+    /**
+     * create a default constructor name as MoodAnalyserMain
+     */
     public MoodAnalyzerMain() {
     }
 
-    MoodAnalyzerMain(String message){
+    public MoodAnalyzerMain(String message) {
         this.message = message;
     }
+
     public String analyseMood() {
-        if (this.message.contains("sad"))
-            return "SAD";
-        else
+        try {
+            if (this.message.contains("Sad"))
+                return "SAD";
+            else
+                return "HAPPY";
+        } catch (NullPointerException e) {
             return "HAPPY";
+        }
     }
 }
